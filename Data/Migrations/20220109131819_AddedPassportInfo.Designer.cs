@@ -4,14 +4,16 @@ using Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Data.Migrations
 {
     [DbContext(typeof(CompanyContext))]
-    partial class CompanyContextModelSnapshot : ModelSnapshot
+    [Migration("20220109131819_AddedPassportInfo")]
+    partial class AddedPassportInfo
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -60,36 +62,6 @@ namespace Data.Migrations
                     b.ToTable("PassportInfo");
                 });
 
-            modelBuilder.Entity("Domain.Project", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Projects");
-                });
-
-            modelBuilder.Entity("EmployeeProject", b =>
-                {
-                    b.Property<int>("EmployeesEmpId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProjectsId")
-                        .HasColumnType("int");
-
-                    b.HasKey("EmployeesEmpId", "ProjectsId");
-
-                    b.HasIndex("ProjectsId");
-
-                    b.ToTable("EmployeeProject");
-                });
-
             modelBuilder.Entity("Domain.Employee", b =>
                 {
                     b.HasOne("Domain.PassportInfo", "PassportInfo")
@@ -97,21 +69,6 @@ namespace Data.Migrations
                         .HasForeignKey("PassportInfoId");
 
                     b.Navigation("PassportInfo");
-                });
-
-            modelBuilder.Entity("EmployeeProject", b =>
-                {
-                    b.HasOne("Domain.Employee", null)
-                        .WithMany()
-                        .HasForeignKey("EmployeesEmpId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Domain.Project", null)
-                        .WithMany()
-                        .HasForeignKey("ProjectsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

@@ -14,6 +14,7 @@ namespace Data
         private const string ConnectionString = "Data Source=localhost;Database=Company;Integrated Security=true";
 
         public DbSet<Employee> Employees { get; set; }
+        public DbSet<Project> Projects { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -26,7 +27,7 @@ namespace Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Employee>().Property(x => x.FirstName).IsRequired().HasColumnType("varchar(60)");
+            //modelBuilder.Entity<Employee>().Property(x => x.FirstName).IsRequired().HasColumnType("varchar(60)");
 
             base.OnModelCreating(modelBuilder);
         }
