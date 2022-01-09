@@ -30,10 +30,22 @@ namespace UI.Text
             //var employee = companyContext.Employees.FirstOrDefault(e => e.Id == 1);
             //var employee = companyContext.Employees.Find(1);
             //var employee = companyContext.Employees.First();
-            var employee = companyContext.Employees
-                .Where(e => e.Id >= 2)
-                .OrderByDescending(e => e.Id)
-                .Last();
+            //var employee = companyContext.Employees
+            //    .Where(e => e.Id >= 2)
+            //    .OrderByDescending(e => e.Id)
+            //    .Last();
+            //var employee = companyContext.Employees.FirstOrDefault(e => e.Id == 1);
+            //Console.WriteLine(employee);
+            //employee = companyContext.Employees.FirstOrDefault(e => e.Id == 1);
+            //Console.WriteLine(employee);
+            //employee = companyContext.Employees.FirstOrDefault(e => e.Id == 1);
+            //Console.WriteLine(employee);
+
+            var employee = companyContext.Employees.Find(1);
+            Console.WriteLine(employee);
+            employee = companyContext.Employees.Find(1);
+            Console.WriteLine(employee);
+            employee = companyContext.Employees.Find(1);
             Console.WriteLine(employee);
         }
     }
