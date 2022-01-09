@@ -19,13 +19,15 @@ namespace Domain
         [MaxLength(100)]
         public string LastName { get; set; }
 
+        [NotMapped]
+        public string MiddleName { get; set; }
         public PassportInfo PassportInfo { get; set; }
 
         public List<Project> Projects { get; set; }
 
         public override string ToString()
         {
-            return $"{EmpId}: {FirstName} {LastName}";
+            return $"{EmpId}: {FirstName} {LastName} {PassportInfo}";
         }
 
         public bool LastNameStartsWithK()
