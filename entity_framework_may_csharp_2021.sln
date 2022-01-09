@@ -9,9 +9,26 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sql", "sql", "{38D5CC80-AD4
 		insert_data.sql = insert_data.sql
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8236893D-653E-437B-B0DE-01483495A1BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{CA7CF696-2C2E-4011-A15B-DAA8263E1695}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CA7CF696-2C2E-4011-A15B-DAA8263E1695}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA7CF696-2C2E-4011-A15B-DAA8263E1695}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA7CF696-2C2E-4011-A15B-DAA8263E1695}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA7CF696-2C2E-4011-A15B-DAA8263E1695}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CA7CF696-2C2E-4011-A15B-DAA8263E1695} = {8236893D-653E-437B-B0DE-01483495A1BB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {80E615D5-7DB5-47A9-A74B-15F6D9098EAA}
