@@ -19,7 +19,8 @@ namespace Data
         {
             optionsBuilder
                 .UseSqlServer(ConnectionString)
-                .LogTo(Console.WriteLine, LogLevel.Information);
+                .LogTo(Console.WriteLine, LogLevel.Information)
+                .EnableSensitiveDataLogging();
             base.OnConfiguring(optionsBuilder);
         }
     }
