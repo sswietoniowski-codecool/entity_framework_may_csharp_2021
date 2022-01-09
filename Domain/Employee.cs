@@ -16,5 +16,10 @@ namespace Domain
         {
             return $"{Id}: {FirstName} {LastName}";
         }
+
+        public bool LastNameStartsWithK()
+        {
+            return LastName.StartsWith("K");
+        }
     }
 }
