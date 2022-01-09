@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Domain;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 namespace Data
 {
@@ -16,7 +17,9 @@ namespace Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(ConnectionString);
+            optionsBuilder
+                .UseSqlServer(ConnectionString)
+                .LogTo(Console.WriteLine, LogLevel.Information);
             base.OnConfiguring(optionsBuilder);
         }
     }
