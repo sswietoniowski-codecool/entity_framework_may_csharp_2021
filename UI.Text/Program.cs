@@ -15,10 +15,12 @@ namespace UI.Text
             CompanyContext companyContext = new CompanyContext();
 
             var employees = companyContext.Employees
-                .Where(e => e.LastName.Contains("k")); // <- '%k%'
+                //.Where(e => e.LastName.Contains("k")); // <- '%k%'
                 //.Where(e => EF.Functions.Like(e.LastName, "K%"));
                 //.ToList()
                 //.Where(e => e.LastNameStartsWithK());
+                //.Where(e => e.LastName.StartsWith("K"));
+                .Where(e => e.LastName != null);
 
             foreach (var employee in employees)
             {
