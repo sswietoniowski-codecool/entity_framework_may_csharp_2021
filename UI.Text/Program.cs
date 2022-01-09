@@ -14,39 +14,19 @@ namespace UI.Text
         {
             CompanyContext companyContext = new CompanyContext();
 
-            //var employees = companyContext.Employees
-            //    //.Where(e => e.LastName.Contains("k")); // <- '%k%'
-            //    //.Where(e => EF.Functions.Like(e.LastName, "K%"));
-            //    //.ToList()
-            //    //.Where(e => e.LastNameStartsWithK());
-            //    //.Where(e => e.LastName.StartsWith("K"));
-            //    .Where(e => e.LastName != null);
+            //Employee newEmployee = new Employee {FirstName = "Ktoś2", LastName = "Nowy2"};
+            //companyContext.Employees.Add(newEmployee);
 
-            //foreach (var employee in employees)
-            //{
-            //    Console.WriteLine(employee);
-            //}
-
-            //var employee = companyContext.Employees.FirstOrDefault(e => e.Id == 1);
             //var employee = companyContext.Employees.Find(1);
-            //var employee = companyContext.Employees.First();
-            //var employee = companyContext.Employees
-            //    .Where(e => e.Id >= 2)
-            //    .OrderByDescending(e => e.Id)
-            //    .Last();
-            //var employee = companyContext.Employees.FirstOrDefault(e => e.Id == 1);
-            //Console.WriteLine(employee);
-            //employee = companyContext.Employees.FirstOrDefault(e => e.Id == 1);
-            //Console.WriteLine(employee);
-            //employee = companyContext.Employees.FirstOrDefault(e => e.Id == 1);
-            //Console.WriteLine(employee);
+            //employee.FirstName = "Jan";
+            //companyContext.Employees.Update(new Employee { Id = 7, FirstName = "Jan"});
+            //companyContext.Employees.Remove(new Employee { Id = 7 });
+            Employee newEmployee = new Employee { FirstName = "Ktoś2", LastName = "Nowy2" };
+            companyContext.Add(newEmployee);
 
-            var employee = companyContext.Employees.Find(1);
-            Console.WriteLine(employee);
-            employee = companyContext.Employees.Find(1);
-            Console.WriteLine(employee);
-            employee = companyContext.Employees.Find(1);
-            Console.WriteLine(employee);
+            //var employeeToBeRemoved = companyContext.Employees.Find(6);
+            //companyContext.Employees.Remove(employeeToBeRemoved);
+            companyContext.SaveChanges();
         }
     }
 }
