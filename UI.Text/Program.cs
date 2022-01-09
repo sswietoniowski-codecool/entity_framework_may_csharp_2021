@@ -21,7 +21,7 @@ namespace UI.Text
             //employee.FirstName = "Jan";
             //companyContext.Employees.Update(new Employee { Id = 7, FirstName = "Jan"});
             //companyContext.Employees.Remove(new Employee { Id = 7 });
-            Employee newEmployee = new Employee { FirstName = "Ktoś2", LastName = "Nowy2" };
+            Employee newEmployee = new Employee { FirstName = "Ktoś2", LastName = "Nowy3" };
             companyContext.Add(newEmployee);
 
             //var employeeToBeRemoved = companyContext.Employees.Find(6);
