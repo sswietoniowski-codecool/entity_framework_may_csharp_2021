@@ -11,7 +11,7 @@ namespace Data
 {
     public class CompanyContext : DbContext
     {
-        private const string ConnectionString = "Data Source=localhost;Database=Company_DB;Integrated Security=true";
+        private const string ConnectionString = "Data Source=localhost;Database=Company;Integrated Security=true";
 
         public DbSet<Employee> Employees { get; set; }
 
