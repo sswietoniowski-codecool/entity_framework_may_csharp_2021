@@ -16,12 +16,20 @@ namespace Data
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Project> Projects { get; set; }
 
+        public CompanyContext(DbContextOptions options) : base(options)
+        {
+        }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder
-                .UseSqlServer(ConnectionString)
-                .LogTo(Console.WriteLine, LogLevel.Information)
-                .EnableSensitiveDataLogging();
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder
+                    .UseSqlServer(ConnectionString)
+                    .LogTo(Console.WriteLine, LogLevel.Information)
+                    .EnableSensitiveDataLogging();
+            }
+
             base.OnConfiguring(optionsBuilder);
         }
 
