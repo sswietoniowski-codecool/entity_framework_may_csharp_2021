@@ -23,5 +23,12 @@ namespace Data
                 .EnableSensitiveDataLogging();
             base.OnConfiguring(optionsBuilder);
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Employee>().Property(x => x.FirstName).IsRequired().HasColumnType("varchar(60)");
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
